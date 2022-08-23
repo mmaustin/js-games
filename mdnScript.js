@@ -24,7 +24,7 @@ function draw() {
       ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
       ctx.moveTo(95, 65);
       ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
-      ctx.stroke();      
+      ctx.stroke();    
 
     }
   }
