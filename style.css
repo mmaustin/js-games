@@ -1,5 +1,12 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
 #canvas1{
     border: 2px solid blue;
-    height: 50px;
-    width: 50px;
+    height: 250px;
+    width: 250px;
 }
