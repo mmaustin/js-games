@@ -1,4 +1,4 @@
-/*const canvas = document.getElementById('canvas1');
+const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 
 const CANVAS_WIDTH = canvas.width = 600;
@@ -14,8 +14,8 @@ function animate(){
     //draw image method can take up to nine arguments.
     //ctx.drawImage(image, sourcex, sy, sourceWidth, sourceHeight, and the last four arguments from the function below)
     ctx.drawImage(playerImage, 0, 0, 1, 1, variable, 0, 7, 600);
-    variable += 1;
+    //variable += 1;
     //requestAnimationFrame continuously runs animate
     requestAnimationFrame(animate)
 }
-animate();*/
+animate();
