@@ -8,6 +8,7 @@ const playerImage = new Image();
 playerImage.src = './images/shadow_dog.png'
 const spriteWidth = 575;
 const spriteHeight = 523;
+let playerState = 'run';
 
 let gameFrame = 0;
 const staggerFrames = 3;
@@ -24,7 +25,7 @@ const animationStates = [
     },
     {
         name: 'fall',
-        frames: 9
+        frames: 7
     },
     {
         name: 'run',
@@ -71,9 +72,9 @@ console.log(spriteAnimations);
 
 function animate(){
     ctx.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
-    let position = Math.floor(gameFrame/staggerFrames) % spriteAnimations['jump'].loc.length;
+    let position = Math.floor(gameFrame/staggerFrames) % spriteAnimations[playerState].loc.length;
     let frameX = spriteWidth * position;
-    let frameY = spriteAnimations['jump'].loc[position].y;
+    let frameY = spriteAnimations[playerState].loc[position].y;
     //ctx.fillRect(100,50,100,100);
     //draw image method can take up to nine arguments.
     //ctx.drawImage(image, sourcex, sy, sourceWidth, sourceHeight, and the last four arguments from the function below)
