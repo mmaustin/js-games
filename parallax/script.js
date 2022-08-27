@@ -15,9 +15,13 @@ backgroundLayer4.src = '../images/layer-4.png';
 const backgroundLayer5 = new Image();
 backgroundLayer5.src = '../images/layer-5.png';
 
+let x = 0;
+
 function animate(){
-    //ctx.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);    
-    ctx.drawImage(backgroundLayer4, 0, 0);
+    ctx.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);    
+    ctx.drawImage(backgroundLayer4, x, 0);
+    if (x < -1600) x = 0;
+    else x -= gameSpeed;
     requestAnimationFrame(animate);
 }
 animate();
