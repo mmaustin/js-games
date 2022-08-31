@@ -25,15 +25,17 @@ class Enemy{
     }
 }
 
-const enemy1 = new Enemy();
+//const enemy1 = new Enemy();
 for(let i = 0; i < numberOfEnemies; i++){
     new Enemy();
 }
-console.log(ENEMIES_ARRAY)
+
 function animate(){
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    enemy1.update();
-    enemy1.draw();
+    ENEMIES_ARRAY.map(enemy => {
+        enemy.update();
+        enemy.draw();
+    })
     requestAnimationFrame(animate);
 }
 animate();
