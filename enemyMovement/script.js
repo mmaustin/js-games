@@ -3,7 +3,7 @@ const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 CANVAS_WIDTH = canvas.width = 500;
 CANVAS_HEIGHT = canvas.height = 1000;
-numberOfEnemies = 10;
+numberOfEnemies = 100;
 ENEMIES_ARRAY = [];
 
 class Enemy{
@@ -12,12 +12,13 @@ class Enemy{
         this.y = Math.random() * CANVAS_HEIGHT;
         this.width = 100;
         this.height = 100;
+        this.speed = Math.random() * 4 -2; //don't understand this line
         ENEMIES_ARRAY.push(this);
     }
 
     update() {
-        this.x++;
-        this.y++;
+        this.x += this.speed;
+        this.y =+ this.speed;
     }
 
     draw() {
