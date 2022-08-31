@@ -11,11 +11,22 @@ class Enemy{
         this.width = 100;
         this.height = 100;
     }
+
+    update() {
+        this.x++;
+        this.y++;
+    }
+
+    draw() {
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
 }
 
 const enemy1 = new Enemy();
 
 function animate(){
-    ctx.fillRect(enemy1.x, enemy1.y, enemy1.width, enemy1.height);
+    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    enemy1.update();
+    enemy1.draw();
 }
 animate();
