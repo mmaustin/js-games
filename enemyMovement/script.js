@@ -8,6 +8,7 @@ ENEMIES_ARRAY = [];
 
 const enemyImage1 = new Image();
 enemyImage1.src = '../images/enemy1.png';
+let gameFrame = 0;
 
 class Enemy{
     constructor(){
@@ -25,7 +26,9 @@ class Enemy{
     update() {
         this.x += this.speed;
         this.y += this.speed;
-        this.frame > 4 ? this.frame = 0 : this.frame++;
+        if(gameFrame % 2 === 0){
+            this.frame > 4 ? this.frame = 0 : this.frame++;
+        }
     }
 
     draw() {
@@ -44,6 +47,7 @@ function animate(){
         enemy.update();
         enemy.draw();
     })
+    gameFrame++;
     requestAnimationFrame(animate);
 }
 animate();
