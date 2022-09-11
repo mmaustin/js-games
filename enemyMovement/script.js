@@ -22,6 +22,8 @@ class Enemy{
         this.height = this.spriteHeight / 2.5;
         this.x = Math.random() * (canvas.width - this.width);
         this.y = Math.random() * (canvas.height - this.height);
+        this.newX = Math.random() * (canvas.width - this.width);
+        this.newY = Math.random() * (canvas.height - this.height);
         this.frame = 0;
         this.flapSpeed = Math.floor(Math.random() * 3 + 1);
 
@@ -29,8 +31,15 @@ class Enemy{
     }
 
     update() {
-        //this.x = 0;
-        //this.y = 0;
+        if (gameFrame % 60 === 0){
+            this.newX = Math.random() * (canvas.width - this.width);
+            this.newY = Math.random() * (canvas.height - this.height);
+        }
+        let dx = this.x - this.newX;
+        let dy = this.y - this.newY;
+        this.x -= dx/20;
+        this.y -= dy/20;
+
         if(this.x + this.width < 0) this.x = canvas.width;
         if(gameFrame % this.flapSpeed === 0){
             this.frame > 4 ? this.frame = 0 : this.frame++;
